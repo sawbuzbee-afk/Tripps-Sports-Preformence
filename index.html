@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tripp Sports Performance | Baseball &amp; Softball Training | Spring, TX</title>
+<meta name="description" content="Tripp Sports Performance (TSP) — elite baseball, softball, and strength &amp; conditioning training in Spring, TX from former professional and Division I athletes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%230b0b0c' stroke='%23c9a227' stroke-width='6'/%3E%3Ctext x='50' y='63' font-family='Arial Black,sans-serif' font-weight='900' font-size='36' fill='%23c9a227' text-anchor='middle'%3ETSP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0a0b;
+    --black-2:#131315;
+    --black-3:#1c1c1f;
+    --gold:#c9a227;
+    --gold-light:#e3c565;
+    --gold-dim:#8a6f1c;
+    --white:#f4f3ef;
+    --gray:#a8a8ac;
+    --gray-dim:#6b6b70;
+    --max:1240px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  .scroll-progress{
+    position:fixed;
+    top:0;left:0;
+    height:3px;width:0%;
+    background:linear-gradient(90deg, var(--gold-dim), var(--gold-light));
+    z-index:200;
+    transition:width .1s linear;
+  }
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    line-height:1.05;
+  }
+  .eyebrow{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-size:0.85rem;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  .btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:16px 34px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:1rem;
+    border-radius:2px;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    cursor:pointer;
+    border:2px solid transparent;
+    overflow:hidden;
+  }
+  .btn::after{
+    content:'';
+    position:absolute;
+    top:0;left:-120%;
+    width:60%;height:100%;
+    background:linear-gradient(115deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform:skewX(-20deg);
+    transition:left .55s ease;
+  }
+  .btn:hover::after{left:130%;}
+  .btn-gold{
+    background:var(--gold);
+    color:var(--black);
+    box-shadow:0 0 0 rgba(201,162,39,0);
+  }
+  .btn-gold:hover{
+    background:var(--gold-light);
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(201,162,39,0.25);
+  }
+  .btn-outline{
+    background:transparent;
+    color:var(--white);
+    border-color:rgba(244,243,239,0.35);
+  }
+  .btn-outline:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+    transform:translateY(-2px);
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(10,10,11,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(201,162,39,0.15);
+    transition:background .3s ease;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 24px;
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .logo-mark{
+    width:46px;height:46px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+  }
+  .logo-text{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:1.5px;
+    line-height:1.1;
+    font-size:0.95rem;
+    text-transform:uppercase;
+  }
+  .logo-text span{
+    display:block;
+    color:var(--gold);
+    font-size:0.65rem;
+    letter-spacing:2px;
+    font-weight:600;
+  }
+  nav ul{
+    display:flex;
+    gap:34px;
+    list-style:none;
+  }
+  nav ul li a{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-size:0.92rem;
+    color:var(--gray);
+    transition:color .2s ease;
+    position:relative;
+  }
+  nav ul li a:hover{color:var(--white);}
+  .nav-cta{display:flex;align-items:center;gap:22px;}
+  .nav-cta .btn{padding:11px 24px;font-size:0.88rem;}
+  .burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    background:none;border:none;
+    padding:6px;
+  }
+  .burger span{width:26px;height:2px;background:var(--white);display:block;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(10,10,11,0.55) 0%, rgba(10,10,11,0.75) 55%, var(--black) 100%),
+      repeating-linear-gradient(135deg, #141416 0px, #141416 2px, #0a0a0b 2px, #0a0a0b 40px);
+  }
+  .hero video, .hero .hero-fallback-img{
+    position:absolute;
+    top:50%;left:50%;
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:50% 50%;
+    transform:translate(-50%,-50%) scale(1.06);
+    z-index:0;
+    will-change:transform;
+  }
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(10,10,11,0.6) 0%, rgba(10,10,11,0.08) 26%, rgba(10,10,11,0.1) 68%, rgba(10,10,11,0.7) 100%);
+    z-index:1;
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    max-width:660px;
+    margin:0 24px;
+    padding:42px 46px;
+    text-align:center;
+    background:transparent;
+    animation:heroIn 1.1s cubic-bezier(.19,1,.22,1) both;
+  }
+  @keyframes heroIn{
+    0%{opacity:0;transform:translateY(24px);}
+    100%{opacity:1;transform:translateY(0);}
+  }
+  .hero-line{
+    width:52px;height:3px;
+    background:var(--gold);
+    margin:0 auto 22px;
+  }
+  .hero .eyebrow{
+    display:block;
+    margin-bottom:14px;
+    text-shadow:0 1px 8px rgba(0,0,0,0.9);
+  }
+  .hero h1{
+    font-size:clamp(1.9rem, 3.6vw, 3.1rem);
+    color:var(--white);
+    margin-bottom:18px;
+    text-shadow:0 2px 18px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.9);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold);
+  }
+  .hero p.lead{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:1.1rem;
+    color:var(--white);
+    max-width:500px;
+    margin:0 auto 28px;
+    font-weight:500;
+    text-shadow:0 1px 10px rgba(0,0,0,0.9);
+  }
+  .hero-btns{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:32px;
+  }
+  .hero-badges{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .hero-badges .hb{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:0.78rem;
+    color:var(--white);
+    text-shadow:0 1px 8px rgba(0,0,0,0.9);
+  }
+  .hero-badges .hb::before{
+    content:'';
+    width:6px;height:6px;
+    border-radius:50%;
+    background:var(--gold);
+    flex-shrink:0;
+  }
+  .scroll-cue{
+    position:absolute;
+    bottom:30px;left:50%;
+    transform:translateX(-50%);
+    z-index:2;
+    width:24px;height:38px;
+    border:2px solid rgba(244,243,239,0.4);
+    border-radius:14px;
+  }
+  .scroll-cue::before{
+    content:'';
+    position:absolute;
+    top:6px;left:50%;
+    transform:translateX(-50%);
+    width:4px;height:8px;
+    background:var(--gold);
+    border-radius:2px;
+    animation:scrollcue 1.6s infinite;
+  }
+  @keyframes scrollcue{
+    0%{opacity:1;top:6px;}
+    70%{opacity:0;top:20px;}
+    100%{opacity:0;top:6px;}
+  }
+
+  /* ---------- STAT BAR ---------- */
+  .stats{
+    background:var(--gold);
+    color:var(--black);
+    padding:36px 0;
+  }
+  .stats .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+  }
+  .stat-num{
+    font-family:'Anton',sans-serif;
+    font-size:2.6rem;
+    line-height:1;
+  }
+  .stat-label{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-size:0.85rem;
+    margin-top:6px;
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{
+    background:var(--black-2);
+    border-bottom:1px solid rgba(201,162,39,0.15);
+    overflow:hidden;
+    padding:16px 0;
+  }
+  .marquee-track{
+    display:flex;
+    width:max-content;
+    gap:18px;
+    animation:marqueeScroll 32s linear infinite;
+  }
+  .marquee-track span{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:0.95rem;
+    color:var(--gray);
+    white-space:nowrap;
+  }
+  .marquee-track span:nth-child(2n){color:var(--gold);font-size:0.7rem;}
+  @keyframes marqueeScroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:110px 0;}
+  .section-head{
+    max-width:640px;
+    margin:0 0 56px;
+  }
+  .section-head.center{margin:0 auto 56px;text-align:center;}
+  .section-head h2{
+    font-size:clamp(2.1rem,4.2vw,3.2rem);
+    margin-top:14px;
+    color:var(--white);
+  }
+  .section-head p{
+    color:var(--gray);
+    font-size:1.08rem;
+    margin-top:16px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--black-2);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-media{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:4px;
+    overflow:hidden;
+    background:
+      linear-gradient(160deg, var(--black-3), var(--black));
+    border:1px solid rgba(201,162,39,0.2);
+  }
+  .about-media img{width:100%;height:100%;object-fit:cover;}
+  .about-media::after{
+    content:'';
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:40%;
+    background:linear-gradient(0deg, rgba(0,0,0,0.7), transparent);
+  }
+  .about-badge{
+    position:absolute;
+    bottom:22px;left:22px;
+    z-index:2;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-size:0.9rem;
+    border-left:3px solid var(--gold);
+    padding-left:12px;
+  }
+  .about-copy p{color:var(--gray);margin-bottom:18px;font-size:1.05rem;}
+  .about-list{
+    list-style:none;
+    margin-top:26px;
+    display:grid;
+    gap:14px;
+  }
+  .about-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:1.1rem;
+    font-weight:600;
+    letter-spacing:0.4px;
+    color:var(--white);
+  }
+  .about-list li::before{
+    content:'';
+    width:9px;height:9px;
+    background:var(--gold);
+    margin-top:8px;
+    flex-shrink:0;
+    transform:rotate(45deg);
+  }
+
+  /* ---------- SPORTS STRIP ---------- */
+  .sports-strip{
+    display:flex;
+    border-top:1px solid rgba(201,162,39,0.15);
+    border-bottom:1px solid rgba(201,162,39,0.15);
+  }
+  .sport-cell{
+    position:relative;
+    flex:1;
+    padding:44px 20px;
+    text-align:center;
+    border-right:1px solid rgba(201,162,39,0.15);
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+  }
+  .sport-cell::before{
+    content:'';
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,10,11,0.85) 0%, rgba(10,10,11,0.93) 100%);
+    transition:background .3s ease;
+  }
+  .sport-cell:last-child{border-right:none;}
+  .sport-cell:hover::before{background:linear-gradient(180deg, rgba(10,10,11,0.6) 0%, rgba(10,10,11,0.78) 100%);}
+  .sport-cell .eyebrow, .sport-cell h3{position:relative;z-index:1;}
+  .sport-cell .eyebrow{display:block;margin-bottom:8px;}
+  .sport-cell h3{font-size:1.5rem;color:var(--white);}
+
+  /* ---------- PROGRAMS ---------- */
+  .programs{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(10,10,11,0.94) 0%, rgba(10,10,11,0.97) 100%),
+      url('images/coaching-action.jpg') center/cover no-repeat;
+  }
+  .program-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .program-card{
+    background:var(--black-2);
+    border:1px solid rgba(201,162,39,0.15);
+    border-radius:4px;
+    padding:34px 26px;
+    display:flex;
+    flex-direction:column;
+    transition:transform .25s ease, border-color .25s ease;
+  }
+  .program-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--gold);
+  }
+  .program-card.featured{
+    background:linear-gradient(160deg, var(--black-3), var(--black-2));
+    border-color:var(--gold);
+    position:relative;
+  }
+  .program-tag{
+    position:absolute;
+    top:-13px;right:20px;
+    background:var(--gold);
+    color:var(--black);
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    font-size:0.72rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:2px;
+  }
+  .program-card h3{
+    font-size:1.3rem;
+    color:var(--white);
+    margin-bottom:6px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+  .program-price{
+    font-family:'Anton',sans-serif;
+    font-size:2.3rem;
+    color:var(--gold);
+    margin-bottom:4px;
+  }
+  .program-price span{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:0.95rem;
+    color:var(--gray-dim);
+    text-transform:none;
+    letter-spacing:0;
+  }
+  .program-card ul{
+    list-style:none;
+    margin:20px 0 26px;
+    flex-grow:1;
+  }
+  .program-card ul li{
+    color:var(--gray);
+    font-size:0.92rem;
+    padding:8px 0;
+    border-top:1px solid rgba(255,255,255,0.06);
+  }
+  .program-card ul li:first-child{border-top:none;}
+  .program-card .btn{
+    text-align:center;
+    justify-content:center;
+    width:100%;
+    font-size:0.85rem;
+    padding:13px 20px;
+  }
+
+  /* ---------- COACHES ---------- */
+  .coaches{background:var(--black-2);}
+  .coach-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+  }
+  .coach-card{
+    background:var(--black);
+    border:1px solid rgba(201,162,39,0.12);
+    border-radius:4px;
+    overflow:hidden;
+    transition:transform .25s ease, border-color .25s ease;
+  }
+  .coach-card:hover{transform:translateY(-6px);border-color:var(--gold);}
+  .coach-photo{
+    aspect-ratio:3/4;
+    background:linear-gradient(150deg, var(--black-3) 0%, var(--black) 70%);
+    position:relative;
+    overflow:hidden;
+  }
+  .coach-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .coach-card:hover .coach-photo img{transform:scale(1.06);}
+  .coach-photo::before{
+    content:'';
+    position:absolute;inset:0;
+    background:linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 55%);
+    z-index:1;
+  }
+  .coach-info{padding:22px 20px 26px;}
+  .coach-info h3{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:0.5px;
+    font-size:1.2rem;
+    color:var(--white);
+    text-transform:uppercase;
+  }
+  .coach-role{
+    color:var(--gold);
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;
+    font-size:0.85rem;
+    letter-spacing:0.5px;
+    margin:4px 0 14px;
+    text-transform:uppercase;
+  }
+  .coach-info p{
+    color:var(--gray);
+    font-size:0.86rem;
+    line-height:1.65;
+  }
+
+  /* ---------- ALUMNI ---------- */
+  .alumni{background:var(--black-2);}
+  .alumni-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .alumni-card{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:4px;
+    overflow:hidden;
+    border:1px solid rgba(201,162,39,0.15);
+    background:linear-gradient(150deg, var(--black-3), var(--black));
+  }
+  .alumni-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+  .alumni-card:hover img{transform:scale(1.05);}
+  .alumni-card::after{
+    content:'';
+    position:absolute;inset:0;
+    background:linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 45%);
+  }
+  .alumni-tag{
+    position:absolute;
+    bottom:18px;left:18px;right:18px;
+    z-index:2;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    font-size:1rem;
+    border-left:3px solid var(--gold);
+    padding-left:12px;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{
+    background:
+      linear-gradient(180deg, rgba(10,10,11,0.88) 0%, rgba(10,10,11,0.95) 100%),
+      url('images/facility-wide.jpg') center/cover no-repeat;
+    text-align:center;
+  }
+  .rating-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--black-2);
+    border:1px solid rgba(201,162,39,0.3);
+    padding:10px 20px;
+    border-radius:30px;
+    margin-bottom:40px;
+  }
+  .stars{color:var(--gold);letter-spacing:2px;font-size:1.1rem;}
+  .rating-badge span{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;
+    color:var(--gray);
+    font-size:0.9rem;
+  }
+  blockquote{
+    max-width:760px;
+    margin:0 auto;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:clamp(1.3rem,2.6vw,1.7rem);
+    font-weight:500;
+    color:var(--white);
+    line-height:1.5;
+  }
+  blockquote::before{content:'\201C';color:var(--gold);}
+  blockquote::after{content:'\201D';color:var(--gold);}
+  .quote-author{
+    margin-top:26px;
+    font-family:'Barlow Condensed',sans-serif;
+    color:var(--gold);
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:0.9rem;
+  }
+  .quote-author span{
+    display:block;
+    color:var(--gray-dim);
+    font-weight:500;
+    text-transform:none;
+    letter-spacing:0;
+    margin-top:2px;
+  }
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+  }
+  .gallery-grid .g-item{
+    background:linear-gradient(150deg, var(--black-3), var(--black-2));
+    border:1px solid rgba(201,162,39,0.1);
+    border-radius:3px;
+    overflow:hidden;
+    position:relative;
+    aspect-ratio:4/3;
+  }
+  .gallery-grid .g-item img{
+    width:100%;height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .gallery-grid .g-item:hover img{transform:scale(1.06);}
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(10,10,11,0.88) 0%, rgba(10,10,11,0.82) 50%, rgba(10,10,11,0.92) 100%),
+      url('images/facility-equipment.jpg') center/cover no-repeat;
+    padding:100px 0;
+    text-align:center;
+    overflow:hidden;
+  }
+  .cta-banner::before{
+    content:'';
+    position:absolute;inset:0;
+    background:repeating-linear-gradient(135deg, rgba(201,162,39,0.07) 0px, rgba(201,162,39,0.07) 2px, transparent 2px, transparent 40px);
+  }
+  .cta-banner .wrap{position:relative;z-index:1;}
+  .cta-banner h2{
+    font-size:clamp(2.2rem,5vw,3.6rem);
+    color:var(--white);
+    margin:16px 0 30px;
+  }
+  .cta-banner h2 em{font-style:normal;color:var(--gold);}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--black-2);}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+  }
+  .contact-info h3{
+    font-size:1.9rem;
+    color:var(--white);
+    margin-bottom:20px;
+  }
+  .contact-row{
+    display:flex;
+    gap:16px;
+    padding:16px 0;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  .contact-row:first-of-type{border-top:none;}
+  .contact-row .ico{
+    width:38px;height:38px;
+    border:1.5px solid var(--gold);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);
+    flex-shrink:0;
+    font-size:1rem;
+  }
+  .contact-row div h4{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:0.82rem;
+    color:var(--gold);
+    margin-bottom:4px;
+  }
+  .contact-row div p, .contact-row div a{
+    color:var(--gray);
+    font-size:0.98rem;
+  }
+  .contact-row div a:hover{color:var(--gold-light);}
+  .map-wrap{
+    border-radius:4px;
+    overflow:hidden;
+    border:1px solid rgba(201,162,39,0.2);
+    filter:grayscale(0.4) contrast(1.1);
+    min-height:340px;
+  }
+  .map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;}
+  .social-links{display:flex;gap:12px;margin-top:26px;}
+  .social-links a{
+    width:42px;height:42px;
+    border:1.5px solid rgba(201,162,39,0.4);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);
+    transition:background .2s ease, color .2s ease;
+    font-size:1rem;
+  }
+  .social-links a:hover{background:var(--gold);color:var(--black);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--black);
+    border-top:1px solid rgba(201,162,39,0.12);
+    padding:34px 0;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  footer p{
+    color:var(--gray-dim);
+    font-size:0.85rem;
+  }
+  footer .foot-logo{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:2px;
+    color:var(--gray);
+    font-size:0.85rem;
+    text-transform:uppercase;
+  }
+  footer .foot-logo em{color:var(--gold);font-style:normal;}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1000px){
+    nav ul, .nav-cta .btn-outline{display:none;}
+    .burger{display:flex;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);gap:30px;}
+    .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .program-grid{grid-template-columns:repeat(2,1fr);}
+    .coach-grid{grid-template-columns:repeat(2,1fr);}
+    .sports-strip{flex-wrap:wrap;}
+    .sport-cell{flex:1 1 50%;border-bottom:1px solid rgba(201,162,39,0.15);}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .alumni-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    section{padding:76px 0;}
+    .program-grid,.coach-grid{grid-template-columns:1fr;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header>
+  <div class="nav">
+    <a href="#home" class="logo">
+      <img src="images/logo.png" alt="TSP Logo" class="logo-mark">
+      <div class="logo-text">Tripp Sports<span>Performance</span></div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#coaches">Coaches</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+12812220971" class="btn btn-outline">281-222-0971</a>
+      <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener" class="btn btn-gold">Book Now</a>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <video autoplay muted loop playsinline poster="images/facility-wide.jpg" onerror="this.style.display='none'">
+    <source src="videos/hero-edit.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-line"></div>
+    <span class="eyebrow">Spring, Texas &mdash; Suite H</span>
+    <h1>Built In The Cage.<br>Proven <em>On The Field.</em></h1>
+    <p class="lead">Baseball, softball, and strength &amp; conditioning training from former professional and Division&nbsp;I athletes.</p>
+    <div class="hero-btns">
+      <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener" class="btn btn-gold">Book A Session</a>
+      <a href="#programs" class="btn btn-outline">View Programs</a>
+    </div>
+    <div class="hero-badges">
+      <span class="hb">MLB Draft Pick On Staff</span>
+      <span class="hb">Team USA Coaches</span>
+      <span class="hb">5.0 Rated</span>
+    </div>
+  </div>
+  <div class="scroll-cue"></div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat">
+      <div class="stat-num" data-target="13" data-suffix="+">0</div>
+      <div class="stat-label">Combined Pro Seasons</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="3" data-suffix="">0</div>
+      <div class="stat-label">MLB Organizations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="700" data-suffix="+">0</div>
+      <div class="stat-label">Pro Innings &amp; Appearances</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="4" data-suffix="">0</div>
+      <div class="stat-label">Elite Coaches On Staff</div>
+    </div>
+  </div>
+</div>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Trackman</span><span>&bull;</span>
+    <span>Rapsodo</span><span>&bull;</span>
+    <span>OVR Performance</span><span>&bull;</span>
+    <span>MLB Drafted Coaching Staff</span><span>&bull;</span>
+    <span>Team USA Coaching Staff</span><span>&bull;</span>
+    <span>5.0 Rated</span><span>&bull;</span>
+    <span>Trackman</span><span>&bull;</span>
+    <span>Rapsodo</span><span>&bull;</span>
+    <span>OVR Performance</span><span>&bull;</span>
+    <span>MLB Drafted Coaching Staff</span><span>&bull;</span>
+    <span>Team USA Coaching Staff</span><span>&bull;</span>
+    <span>5.0 Rated</span><span>&bull;</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <img src="images/facility-equipment.jpg" alt="TSP Trackman, Rapsodo &amp; OVR Performance training technology" onerror="this.style.display='none'">
+      <div class="about-badge">Suite H &mdash; Spring, TX</div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">Who We Are</span>
+      <h2>Performance Training Built By The Pros</h2>
+      <p>Tripp Sports Performance (TSP) was built on one idea: athletes deserve coaches who've actually done it. Every coach on our staff has played collegiate or professional baseball at a high level &mdash; and now they're putting that experience to work for athletes of every age, from first-time players to Team USA competitors.</p>
+      <p>Whether the goal is a faster fastball, a cleaner swing, a college roster spot, or just building real strength for the first time, TSP builds individualized programs around the athlete, not a one-size-fits-all class.</p>
+      <ul class="about-list">
+        <li>Pitching mechanics &amp; throwing programs</li>
+        <li>Hitting instruction &amp; swing development</li>
+        <li>Fielding &amp; catching fundamentals</li>
+        <li>Strength, conditioning &amp; mobility training</li>
+        <li>Nutrition &amp; recovery coaching</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="sports-strip">
+  <div class="sport-cell reveal" style="background-image:url('images/facility-cage-wide.jpg')">
+    <span class="eyebrow">Diamond Sports</span>
+    <h3>Baseball</h3>
+  </div>
+  <div class="sport-cell reveal" style="background-image:url('images/facility-cage-1.jpg')">
+    <span class="eyebrow">Diamond Sports</span>
+    <h3>Softball</h3>
+  </div>
+  <div class="sport-cell reveal" style="background-image:url('images/facility-squat.jpg')">
+    <span class="eyebrow">Foundation</span>
+    <h3>Strength &amp; Conditioning</h3>
+  </div>
+  <div class="sport-cell reveal" style="background-image:url('images/facility-lunge.jpg')">
+    <span class="eyebrow">Team Training</span>
+    <h3>Multi-Sport Groups</h3>
+  </div>
+</div>
+
+<section class="programs" id="programs">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Memberships</span>
+      <h2>Programs Built To Level You Up</h2>
+      <p>Pick the program that matches your goals &mdash; all memberships book directly through our online scheduling.</p>
+    </div>
+    <div class="program-grid">
+      <div class="program-card reveal featured">
+        <span class="program-tag">Most Popular</span>
+        <h3>Player Development</h3>
+        <div class="program-price">$500<span>/month</span></div>
+        <ul>
+          <li>3 group workouts per week</li>
+          <li>1 hr/week 1-on-1 skill training</li>
+          <li>Hitting, pitching, fielding &amp; catching</li>
+          <li>Personalized throwing program</li>
+          <li>Open gym &amp; cage hours</li>
+          <li>Training room access</li>
+        </ul>
+        <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener" class="btn btn-gold">Join Now</a>
+      </div>
+      <div class="program-card reveal">
+        <h3>Base Workout</h3>
+        <div class="program-price">$250<span>/month</span></div>
+        <ul>
+          <li>3 group workouts per week</li>
+          <li>Open gym &amp; cage hours</li>
+          <li>Training room access</li>
+        </ul>
+        <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener" class="btn btn-outline">Join Now</a>
+      </div>
+      <div class="program-card reveal">
+        <h3>Skill Training</h3>
+        <div class="program-price">$350<span>/month</span></div>
+        <ul>
+          <li>Focused 1-on-1 &amp; small group instruction</li>
+          <li>Hitting, pitching, fielding &amp; catching</li>
+          <li>Personalized skill development plan</li>
+          <li>Open cage hours access</li>
+        </ul>
+        <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener" class="btn btn-outline">Join Now</a>
+      </div>
+      <div class="program-card reveal">
+        <h3>College Player Development</h3>
+        <div class="program-price">$400<span>/month</span></div>
+        <ul>
+          <li>Built for college &amp; college-committed athletes</li>
+          <li>Advanced hitting, pitching, fielding &amp; catching</li>
+          <li>Strength &amp; conditioning for in-season/off-season</li>
+          <li>Open gym &amp; cage access</li>
+        </ul>
+        <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener" class="btn btn-outline">Join Now</a>
+      </div>
+      <div class="program-card reveal">
+        <h3>College Strength &amp; Conditioning</h3>
+        <div class="program-price">$200<span>/month</span></div>
+        <ul>
+          <li>Strength &amp; conditioning built for college athletes</li>
+          <li>In-season / off-season programming</li>
+          <li>Open gym access</li>
+        </ul>
+        <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener" class="btn btn-outline">Join Now</a>
+      </div>
+      <div class="program-card reveal">
+        <h3>Remote Training</h3>
+        <div class="program-price">$250<span>/month</span></div>
+        <ul>
+          <li>Custom programming for athletes outside Spring, TX</li>
+          <li>Video-based instruction &amp; feedback</li>
+          <li>Personalized throwing &amp; skill development plan</li>
+        </ul>
+        <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener" class="btn btn-outline">Join Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="coaches" id="coaches">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Our Staff</span>
+      <h2>Coaches Who've Played At The Top</h2>
+      <p>From the MLB draft to Team USA, our coaching staff brings real professional and Division I experience to every session.</p>
+    </div>
+    <div class="coach-grid">
+      <div class="coach-card reveal">
+        <div class="coach-photo">
+          <img src="images/coach-christian.png" alt="Christian Tripp" onerror="this.style.display='none'">
+        </div>
+        <div class="coach-info">
+          <h3>Christian Tripp</h3>
+          <div class="coach-role">Owner &middot; Director of Player Development &amp; S&amp;C</div>
+          <p>13th-round MLB Draft pick who played for the Mets and Brewers organizations; now head strength &amp; conditioning coach at University of St. Thomas.</p>
+        </div>
+      </div>
+      <div class="coach-card reveal">
+        <div class="coach-photo">
+          <img src="images/coach-johnathon.png" alt="Johnathon Tripp" onerror="this.style.display='none'">
+        </div>
+        <div class="coach-info">
+          <h3>Johnathon Tripp</h3>
+          <div class="coach-role">Pitching Coordinator &amp; Throwing Specialist</div>
+          <p>8-year professional pitcher, including a run with the Cincinnati Reds organization, with a 3.67 career ERA across 514 pro innings.</p>
+        </div>
+      </div>
+      <div class="coach-card reveal">
+        <div class="coach-photo">
+          <img src="images/coach-austin.png" alt="Austin Roccaforte" onerror="this.style.display='none'">
+        </div>
+        <div class="coach-info">
+          <h3>Austin Roccaforte</h3>
+          <div class="coach-role">Hitting Coordinator &amp; S&amp;C Specialist</div>
+          <p>Former Division I shortstop (Lamar University) with a B.S. in Kinesiology and M.S. in Sports Nutrition.</p>
+        </div>
+      </div>
+      <div class="coach-card reveal">
+        <div class="coach-photo">
+          <img src="images/coach-landon.png" alt="Landon Murray" onerror="this.style.display='none'">
+        </div>
+        <div class="coach-info">
+          <h3>Landon Murray</h3>
+          <div class="coach-role">Youth Performance Coordinator &amp; Throwing Specialist</div>
+          <p>University of St. Thomas's all-time strikeout leader and a Team USA coach at the 2023 &amp; 2024 Dominican Republic Baseball Classic.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alumni" id="alumni">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Where They've Landed</span>
+      <h2>Athletes We've Taken To The Next Level</h2>
+      <p>TSP athletes have gone on to compete at the collegiate level across the country.</p>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-card reveal">
+        <img src="images/alumni-mizzou.jpg" alt="TSP athlete signed with Missouri Tigers Baseball" onerror="this.style.display='none'">
+        <div class="alumni-tag">Missouri Tigers Baseball</div>
+      </div>
+      <div class="alumni-card reveal">
+        <img src="images/alumni-tamuk.jpg" alt="TSP athlete signed with Texas A&amp;M-Kingsville Javelina Baseball" onerror="this.style.display='none'">
+        <div class="alumni-tag">Texas A&amp;M&ndash;Kingsville Baseball</div>
+      </div>
+      <div class="alumni-card reveal">
+        <img src="images/alumni-ust.jpg" alt="TSP athlete signed with University of St. Thomas Baseball" onerror="this.style.display='none'">
+        <div class="alumni-tag">University of St. Thomas Baseball</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="rating-badge reveal">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>5.0 Rating</span>
+    </div>
+    <blockquote class="reveal">My son has been working with Christian for almost 2 years. We've worked with a number of trainers and coaches and Christian is definitely one of the very best. He is tough on the kids, but in a way that the kids respect him and want to work harder. His pitching and fitness level have improved so much. We are very happy we found Christian and recommend him often.</blockquote>
+    <div class="quote-author reveal">Matt Landauer<span>Local Guide</span></div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">The Facility</span>
+      <h2>Where Athletes Get To Work</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item reveal"><img src="images/facility-cage-wide.jpg" alt="TSP batting and pitching cages" onerror="this.style.display='none'"></div>
+      <div class="g-item reveal"><img src="images/coaching-action.jpg" alt="TSP coach training an athlete" onerror="this.style.display='none'"></div>
+      <div class="g-item reveal"><img src="images/facility-lunge.jpg" alt="Athlete training with dumbbells at TSP" onerror="this.style.display='none'"></div>
+      <div class="g-item reveal"><img src="images/facility-wide.jpg" alt="TSP strength training facility" onerror="this.style.display='none'"></div>
+      <div class="g-item reveal"><img src="images/facility-squat.jpg" alt="Athlete squatting at TSP" onerror="this.style.display='none'"></div>
+      <div class="g-item reveal"><img src="images/facility-cage-1.jpg" alt="TSP pitching and hitting cage" onerror="this.style.display='none'"></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="wrap">
+    <span class="eyebrow">Ready To Get Started?</span>
+    <h2>Your Next Level Starts <em>In Suite H.</em></h2>
+    <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener" class="btn btn-gold">Book Your Session</a>
+  </div>
+</div>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h3>Visit TSP In Spring, TX</h3>
+      <div class="contact-row">
+        <div class="ico">&#128205;</div>
+        <div>
+          <h4>Address</h4>
+          <p>702 Spring Cypress Road, Suite H<br>Spring, TX 77373</p>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="ico">&#128222;</div>
+        <div>
+          <h4>Phone</h4>
+          <a href="tel:+12812220971">281-222-0971</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="ico">&#9993;</div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:trippsportperformance@outlook.com">trippsportperformance@outlook.com</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="ico">&#128197;</div>
+        <div>
+          <h4>Scheduling</h4>
+          <p>Training by appointment &mdash; <a href="https://www.mindbodyonline.com/explore/locations/tripp-sports-performance" target="_blank" rel="noopener">book online</a></p>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/trippsportsperformance/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe src="https://maps.google.com/maps?q=702%20Spring%20Cypress%20Road%20Suite%20H%2C%20Spring%2C%20TX%2077373&output=embed" loading="lazy" title="TSP Location Map"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-logo">Tripp Sports <em>Performance</em></div>
+    <p>&copy; <span id="year"></span> Tripp Sports Performance. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const navUl = document.querySelector('nav ul');
+  burger.addEventListener('click', () => {
+    navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+    navUl.style.cssText += 'position:absolute;top:100%;left:0;right:0;background:#0a0a0b;flex-direction:column;padding:20px 24px;gap:18px;border-top:1px solid rgba(201,162,39,0.15);display:flex;';
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  const headerEl = document.querySelector('header');
+  const progressEl = document.getElementById('scrollProgress');
+  const heroVideo = document.querySelector('.hero video');
+  window.addEventListener('scroll', () => {
+    headerEl.style.background = window.scrollY > 40 ? 'rgba(10,10,11,0.95)' : 'rgba(10,10,11,0.85)';
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    progressEl.style.width = pct + '%';
+    if (heroVideo) {
+      const offset = Math.min(window.scrollY * 0.15, 60);
+      heroVideo.style.transform = `translate(-50%, calc(-50% + ${offset}px)) scale(1.06)`;
+    }
+  });
+
+  const statEls = document.querySelectorAll('.stat-num[data-target]');
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      statObserver.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  statEls.forEach(el => statObserver.observe(el));
+</script>
+
+</body>
+</html>
